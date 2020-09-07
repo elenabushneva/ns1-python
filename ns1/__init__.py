@@ -233,6 +233,46 @@ class NS1:
 
         return ns1.rest.apikey.APIKey(self.config)
 
+    def acls(self):
+        """
+        Return a new raw REST interface to ACL resources
+
+        :rtype: :py:class:`ns1.rest.acls.ACLs`
+        """
+        import ns1.rest.acls
+
+        return ns1.rest.acls.ACLs(self.config)
+
+    def tsig(self):
+        """
+        Return a new raw REST interface to TSIG resources
+
+        :rtype: :py:class:`ns1.rest.tsig.TSIGs`
+        """
+        import ns1.rest.tsig
+
+        return ns1.rest.tsig.TSIGs(self.config)
+
+    def remote_server(self):
+        """
+        Return a new raw REST interface to Remote Server resources
+
+        :rtype: :py:class:`ns1.rest.remote_server.RemoteServers`
+        """
+        import ns1.rest.remote_server
+
+        return ns1.rest.remote_server.RemoteServers(self.config)
+
+    def views(self):
+        """
+        Return a new raw REST interface to views resources
+
+        :rtype: :py:class:`ns1.rest.views.Views`
+        """
+        import ns1.rest.views
+
+        return ns1.rest.views.Views(self.config)
+
     # HIGH LEVEL INTERFACE
     def loadZone(self, zone, callback=None, errback=None):
         """
